@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .survey-container {
+            background: #fff;
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .gender-container, .rating-container {
+            margin-top: 5px;
+        }
+        .gender-container input, .rating-container input {
+            margin-right: 5px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+        input[type="submit"] {
+            background: #28a745;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="survey-container">
+    <h2>Customer Satisfaction Survey</h2>
+    <form action="#" method="post">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="age">Age:</label>
+        <select id="age" name="age">
+            <option value="">Select Age Group</option>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="46+">46+</option>
+        </select>
+
+        <label>Gender:</label>
+        <div class="gender-container">
+            <input type="radio" id="male" name="gender" value="Male" required> Male
+            <input type="radio" id="female" name="gender" value="Female"> Female
+            <input type="radio" id="other" name="gender" value="Other"> Other
+        </div>
+
+        <label>How would you rate our service?</label>
+        <div class="rating-container">
+            <input type="radio" name="rating" value="Excellent"> Excellent
+            <input type="radio" name="rating" value="Good"> Good
+            <input type="radio" name="rating" value="Average"> Average
+            <input type="radio" name="rating" value="Poor"> Poor
+        </div>
+
+        <label for="feedback">Additional Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4"></textarea>
+
+        <div class="button-container">
+            <input type="submit" value="Submit Survey">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
