@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thời Khóa Biểu</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            color: blue;
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            color: blue;
+            font-size: 18px;
+        }
+        .info {
+            text-align: left;
+        }
+        .info-right {
+            text-align: right;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 16px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2a900;
+            color: black;
+        }
+        .day-header {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="header">THỜI KHÓA BIỂU</div>
+<div class="info-container">
+    <div class="info">
+        <p>Lớp: C0125M1-JV103</p>
+        <p>Giáo viên: Trương Tấn Hải</p>
+        <p>Phòng học: Phòng LT,TH</p>
+    </div>
+    <div class="info-right">
+        <p>Thời gian học: 18:30 - 21:30</p>
+        <p>Ngày học: Thứ 2, 4, 6</p>
+    </div>
+</div>
+<table>
+    <tr>
+        <th rowspan="2">Tuần</th>
+        <th rowspan="2">Ngày bắt đầu</th>
+        <th rowspan="2">Ngày kết thúc</th>
+        <th colspan="3" class="day-header">Môn học</th>
+    </tr>
+    <tr>
+        <th class="day-header">Thứ 2</th>
+        <th class="day-header">Thứ 4</th>
+        <th class="day-header">Thứ 6</th>
+    </tr>
+    <tr>
+        <td>01</td>
+        <td>20/01/2025</td>
+        <td>24/01/2025</td>
+        <td>PF.T1 - PF.L1</td>
+        <td>PF.T2 - PF.L2</td>
+        <td>PF.T3 - PF.L3</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>05/02/2025</td>
+        <td>10/02/2025</td>
+        <td>PF.T4 - PF.L4</td>
+        <td>PF.T5 - PF.L5</td>
+        <td>PF.T6 - PF.L6</td>
+    </tr>
+    <tr>
+        <td>03</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+    </tr>
+</table>
+</body>
+</html>
