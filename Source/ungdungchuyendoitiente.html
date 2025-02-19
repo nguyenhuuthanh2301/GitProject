@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuyển đổi tiền tệ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    input, select, button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #6a5acd;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4b3a94;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Chuyển đổi tiền tệ</h2>
+
+<div class="container">
+  <label for="amount">Amount</label>
+  <input type="number" id="amount" placeholder="Nhập số tiền" required>
+
+  <label for="fromCurrency">From Currency</label>
+  <select id="fromCurrency">
+    <option value="VND">VND</option>
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+  </select>
+
+  <label for="toCurrency">To Currency</label>
+  <select id="toCurrency">
+    <option value="USD">USD</option>
+    <option value="VND">VND</option>
+    <option value="EUR">EUR</option>
+  </select>
+
+  <button onclick="convertCurrency()">Convert</button>
+</div>
+
+<p id="result"></p>
+
+<script>
+  function convertCurrency() {
+    let fromCurrency = document.getElementById("fromCurrency").value;
+    let toCurrency = document.getElementById("toCurrency").value;
+    let amount = parseFloat(document.getElementById("amount").value);
+
+    // Tỷ giá giả định
+    let exchangeRates = {
+      "VND": { "USD": 0.00004, "EUR": 0.000038 },
+      "USD": { "VND": 25000, "EUR": 0.91 },
+      "EUR": { "VND": 27000, "USD": 1.1 }
+    };
+
+    if (isNaN(amount) || amount <= 0) {
+      document.getElementById("result").innerText = "Vui lòng nhập số tiền hợp lệ!";
+      return;
+    }
+
+    if (fromCurrency === toCurrency) {
+      document.getElementById("result").innerText = "Bạn cần chọn hai loại tiền tệ khác nhau!";
+      return;
+    }
+
+    let convertedAmount = amount * exchangeRates[fromCurrency][toCurrency];
+    document.getElementById("result").innerText =
+            "Result: " + convertedAmount.toFixed(6) + " " + toCurrency;
+  }
+</script>
+
+</body>
+</html>
